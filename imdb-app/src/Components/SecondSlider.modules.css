@@ -1,0 +1,142 @@
+.justOffer-card .slick-prev,
+.justOffer-card .slick-next {
+    display: none !important;
+}
+
+
+/* ///////////////// *******************************/
+
+.slick-slide>div {
+    margin: 0 0px;
+}
+
+.slick-list {
+    margin: 0 0px;
+}
+
+.mainDiv420 .slick-slide {
+
+
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+
+.mainDiv420 {
+    /* border: 1px solid red; */
+    height: 410px;
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+.sliderDiv420 {
+    /* border: 1px solid white; */
+    width: 100%;
+    height: 410px;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.secImage {
+    /* border: 1px solid blue; */
+    height: 65%;
+    width: 100%;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+
+}
+
+.secImageDiv {
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+
+}
+
+.textDiv420 {
+    /* border: 1px solid purple; */
+    height: 35%;
+    width: 100%;
+
+}
+
+.star {
+    display: flex;
+    width: 100%;
+    /* border: 1px solid green; */
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.starIcone {
+    width: 20px;
+    height: 30px;
+    color: rgb(255, 255, 3);
+    margin-left: 10px;
+}
+
+.starText {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin-left: 10px;
+
+}
+
+.secTitle {
+    width: 100%;
+    /* border: 1px solid green; */
+    margin-top: 5px;
+}
+
+.sectitleTxt {
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin-left: 10px;
+}
+
+.YearDiv {
+    display: flex;
+    width: 100%;
+    /* border: 1px solid green; */
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+.year{
+    color:white;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+    color:rgb(146, 144, 144)
+}
+.timeText{
+    color:white;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+    color: rgb(151, 148, 148);
+}
+.btnBox{
+    width: 100%;
+    /* border: 1px solid yellow; */
+    height: 40px;
+    text-align: center; 
+    
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    
+}
+.buton{
+    color: rgb(46, 170, 219);
+    width: 80%;
+    border: 1px solid gray;
+    height: 30px;
+    border-radius: 5px;
+
+}
