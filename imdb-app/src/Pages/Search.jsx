@@ -115,7 +115,7 @@ const Search = () => {
                                   <Box className='textDivv' width="64%" height={"200px"} >
                                     <Box  h="60%" mt="30px">
                                       <Text fontSize={"21px "} color="white">{ele.title}</Text>
-                                      <Box display={"flex"} w="100%" mt="5px"  border="1px solid red">
+                                      <Box display={"flex"} w="100%" mt="5px"  >
                                         <Text fontSize={"16px "} color="white">{ele.year}</Text>
                                         <Text fontSize={"16px "} color="white" ml="20px">{ele.time}</Text>
                                       </Box>
