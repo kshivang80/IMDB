@@ -32,13 +32,16 @@ export function getMovies({ year, country, query }) {
     return function (dispatch) {
         dispatch(getMovieRequest())
 
-        let url = 'http://localhost:8080/movie';
+        let url = 'https://imdb-leo8.onrender.com/movie';
 
         if (year && country && query) {
             url += `?year=${year}&country=${country}&title=${query}`;
         }
         else if (year && country) {
             url += `?year=${year}&country=${country}`;
+        }
+        else if (year && query) {
+            url += `?year=${year}&title=${query}`;
         }
         else if (country && query) {
             url += `?country=${country}&title=${query}`;

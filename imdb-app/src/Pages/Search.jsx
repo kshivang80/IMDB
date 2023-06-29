@@ -20,8 +20,8 @@ const Search = () => {
   const [isFilterApplied, setIsFilterApplied] = useState(false);
 
 
-  const years = ["1906", "2022", "2023", "2024", "2025"];
-  const countries = ['India', 'Australia', 'USA', 'Russia', 'Pakistan'];
+  const years = ["2021", "2022", "2023", "2024", "2025"];
+  const countries = ['India', 'Australia', 'USA', 'Russia', 'England'];
 
   const handleYearClick = (year) => {
     setSelectedYear(year);
@@ -115,13 +115,13 @@ const Search = () => {
                                   <Box className='textDivv' width="64%" height={"200px"} >
                                     <Box  h="60%" mt="30px">
                                       <Text fontSize={"21px "} color="white">{ele.title}</Text>
-                                      <Box display={"flex"} w="45%" mt="5px" justifyContent={"space-between"}>
+                                      <Box display={"flex"} w="100%" mt="5px"  border="1px solid red">
                                         <Text fontSize={"16px "} color="white">{ele.year}</Text>
-                                        <Text fontSize={"16px "} color="white">1h 57m R</Text>
+                                        <Text fontSize={"16px "} color="white" ml="20px">{ele.time}</Text>
                                       </Box>
                                       <Box className='star1' >
                                         <AiFillStar className='starIcone1' />
-                                        <Text className="starText1">{ele.reviews_from_users}</Text>
+                                        <Text className="starText1">{ele.rating}</Text>
                                       </Box>
                                     </Box>
                                   </Box>
@@ -245,7 +245,7 @@ const Search = () => {
                         </Box>
                         <Box w="70%" h="100%"  display={"flex"} justifyContent={"center"} alignContent={"center"} >
                           <button
-                            style={{ backgroundColor: isFilterApplied ? 'blue' : 'yellow', width: "85%", height: "85%", borderRadius: "5px", color: "black", fontSize: "18px", fontWeight: "500", border: "1px solid yellow", margin: 'auto', }}
+                            style={{ backgroundColor: isFilterApplied ? 'teal' : 'yellow', width: "85%", height: "85%", borderRadius: "5px", color: "black", fontSize: "18px", fontWeight: "500", margin: 'auto', }}
                             onClick={handleSearch}
                           >
                             SEE RESULTS
