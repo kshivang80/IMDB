@@ -1,0 +1,56 @@
+.mainadvanceDiv{
+    height: auto;
+    width:100%;
+    border: 1px solid #4b5054;
+}
+.filterCountryBox{
+    height: 100px;
+    width:100%;
+    border: 1px solid rgb(230, 218, 220);
+}
+.filterCountry{
+    height: 50px;
+    width:100%;
+    border: 1px solid rgb(230, 218, 220);
+    display: flex;
+    justify-content: space-between;
+}
+.searchButton{
+    position: fixed;
+    bottom: 90px;
+    width: 99.2%;
+    height:60px;
+    background-color: #4b5054;
+    display: flex;
+    justify-content: space-around;
+    margin-left: -16.5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    z-index: 100
+}
+.cancelBTnSearch{
+    width:20%;
+    border:1px solid white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+   color: rgb(169, 167, 167);
+   font-size: 18px;
+   font-weight: bold;
+   justify-content: center;
+   
+}
+
+
+@media screen and (min-width: 769px) {
+    /* STYLES HERE */
+   
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) { 
+    /* STYLES HERE */
+    
+}
+
+@media only screen and (max-device-width: 480px) {
+    /* STYLES HERE */
+}

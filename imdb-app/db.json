@@ -3,9 +3,11 @@
     
 {
   "imdb_title_id": "tt0000574",
-  "title": "The Story of the Kelly Gang",
+  "title": "Bloody Daddy",
   "original_title": "The Story of the Kelly Gang",
-  "year": 1906,
+  "year": 2023,
+  "image":"https://m.media-amazon.com/images/M/MV5BNjA3NmJiZGYtY2Y4Mi00OTljLWFiZDUtMDRmZWM2NmI5MWJkXkEyXkFqcGdeQXVyMTY0NjI3Mjcx._V1_FMjpg_UX1000_.jpg ",
+  
   "date_published": "26-12-1906",
   "genre": "Biography, Crime, Drama",
   "duration": 70,
@@ -27,11 +29,13 @@
   },
   {
   "imdb_title_id": "tt0001892",
-  "title": "Den sorte dr�m",
+  "title": "Siya",
   "original_title": "Den sorte dr�m",
-  "year": 1911,
+  "year": 2023,
+  "image":"https://m.media-amazon.com/images/M/MV5BZDhhOTgzZDAtNDQwZi00MWRhLWJmY2QtMTA5ODAxMmM3MmIzXkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_.jpg",
+
   "date_published": "19-08-1911",
-  "genre": "Drama",
+  "genre": "Siya",
   "duration": 53,
   "country": "Germany, Denmark",
   "language": "",
@@ -51,13 +55,15 @@
   },
   {
   "imdb_title_id": "tt0002101",
-  "title": "Cleopatra",
+  "title": "Only One Man is",
   "original_title": "Cleopatra",
-  "year": 1912,
+  "year": 2023,
+  "image":"https://pbs.twimg.com/media/FwznmEzWYAYgFU7.jpg",
+
   "date_published": "13-11-1912",
   "genre": "Drama, History",
   "duration": 100,
-  "country": "USA",
+  "country": "India",
   "language": "English",
   "director": "Charles L. Gaskill",
   "writer": "Victorien Sardou",
@@ -75,9 +81,11 @@
   },
   {
   "imdb_title_id": "tt0002130",
-  "title": "L'Inferno",
+  "title": "The Kerala Story",
   "original_title": "L'Inferno",
-  "year": 1911,
+  "year": 2023,
+  "image":"https://m.media-amazon.com/images/M/MV5BNzllZDVjN2EtN2M1OS00YTlkLWE0MWYtMTliMDFiODY5YmMxXkEyXkFqcGdeQXVyNTI0NzU5ODc@._V1_FMjpg_UX1000_.jpg",
+
   "date_published": "06-03-1911",
   "genre": "Adventure, Drama, Fantasy",
   "duration": 68,
@@ -99,9 +107,11 @@
   },
   {
   "imdb_title_id": "tt0002199",
-  "title": "From the Manger to the Cross; or, Jesus of Nazareth",
+  "title": "Asur",
   "original_title": "From the Manger to the Cross; or, Jesus of Nazareth",
-  "year": 1912,
+  "year": 2023,
+  "image":"https://m.media-amazon.com/images/M/MV5BNjczODVjMmMtNTVlNy00MjlkLWEyZjYtOThiYzMwZmIyNWZkXkEyXkFqcGdeQXVyMTY0NjI3Mjcx._V1_FMjpg_UX1000_.jpg",
+
   "date_published": 1913,
   "genre": "Biography, Drama",
   "duration": 60,

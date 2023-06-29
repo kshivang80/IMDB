@@ -1,0 +1,116 @@
+
+.MainSearchDiv{
+    height:1500px;
+    width:100%;
+    border:1px solid red
+}
+.searchbar{
+    height:80px;
+    width:100%;
+    border:1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content:space-between
+}
+.searchIcone{
+    margin-top: 5px;
+    width:25px;
+    height:30px;
+
+}
+.InputFiled{
+    
+}
+.cancelBTn{
+    width:20%;
+    border:1px solid white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+   color: rgb(21, 174, 234);
+   font-size: 20px;
+   font-weight:900;
+   
+}
+.SearchItems{
+    width:100%;
+    border:1px solid white;
+    height: 100%;
+    margin-top: 30px;
+    background-color: #18191A;
+}
+.SearchItems1{
+    width:100%;
+    border:1px solid white;
+    height: 100%;
+    margin-top: 30px;
+    background-color: #18191A;
+}
+
+
+
+/* ////////////////////// advance search ////////////// */
+.mainadvanceDiv{
+    height: auto;
+    width:100%;
+    border: 1px solid #4b5054;
+}
+.filterCountryBox{
+    height: 100px;
+    width:100%;
+    border: 1px solid rgb(230, 218, 220);
+}
+.filterCountry{
+    height: 50px;
+    width:100%;
+    border: 1px solid rgb(230, 218, 220);
+    display: flex;
+    justify-content: space-between;
+}
+.searchButton{
+    position: fixed;
+    bottom: 90px;
+    width: 99.2%;
+    height:60px;
+    background-color: #4b5054;
+    display: flex;
+    justify-content: space-around;
+    margin-left: -16.5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    z-index: 100
+}
+.cancelBTnSearch{
+    width:20%;
+    border:1px solid white;
+    height: 100%;
+    display: flex;
+    align-items: center;
+   color: rgb(169, 167, 167);
+   font-size: 18px;
+   font-weight: bold;
+   justify-content: center;
+   
+}
+
+.star1 {
+    display: flex;
+    width: 100%;
+    border: 1px solid green;
+    
+    margin-top: 5px;
+}
+
+.starIcone1 {
+    width: 20px;
+    height: 30px;
+    color: rgb(255, 255, 3);
+    
+}
+
+.starText1 {
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin-left: 10px;
+
+}

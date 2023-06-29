@@ -1,75 +1,331 @@
 import React, { useState, useEffect } from 'react';
-import "../Components/FistSlider.modules.css"
-import { Box, Image, Text } from '@chakra-ui/react'
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { settings4 } from './ResponsiveCard';
+import "./Search.modules.css"
+import { Box, Button,Text, Input, InputGroup, InputLeftElement, InputRightElement, Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs, Image } from '@chakra-ui/react';
+import { BiSolidMicrophone } from 'react-icons/bi';
+import { AiFillStar, AiOutlineSearch } from 'react-icons/ai'
+import Recent from './Recent';
+import AdvacedSearch from './AdvacedSearch';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMovies } from '../Redux/action';
+
 
 const Search = () => {
+  const dispatch = useDispatch();
+  const movie = useSelector(store => store.movies)
+  console.log(movie)
+
+  const [selectedYear, setSelectedYear] = useState('');
+  const [selectedCountry, setSelectedCountry] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isFilterApplied, setIsFilterApplied] = useState(false);
 
 
-  const slides = [
-    {
-      name: 'Lust Stories 2',
-      image: 'https://m.media-amazon.com/images/M/MV5BNDJmZDU0NDMtMDAzYy00Yjk5LWEyNDYtOWYzYTEyZGQ0MDljXkEyXkFqcGdeQXVyMTU2MTIyODU2._V1_.jpg',
-      videoUrl: 'https://www.youtube.com/embed/Z3Z7RocQUXI'
-    },
-    {
-      name: 'Strange thing 2',
-      image: 'https://occ-0-990-1009.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABS6v2gvwesuRN6c28ZykPq_fpmnQCJwELBU-kAmEcuC9HhWX-DfuDbtA-bfo-IrfgNtxl0qwJJlhI6DENsGFXknKkjhxPGTV-qhp.jpg?r=608',
-      videoUrl: 'https://www.youtube.com/embed/l5OAxkuq850'
-    },
-    {
-      name: 'Lucifer 2',
-      image: 'https://m.media-amazon.com/images/M/MV5BNDJjMzc4NGYtZmFmNS00YWY3LThjMzQtYzJlNGFkZGRiOWI1XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg',
-      videoUrl: 'https://www.youtube.com/embed/-l2VT_5waTo'
-    },
-    {
-      name: 'Naruto 3',
-      image: 'https://wallpapers.com/images/hd/naruto-background-423q102rdslu9o0i.jpg',
-      videoUrl: 'https://www.youtube.com/embed/2EpoMwm35Q0'
-    }
-  ];
+  const years = [1906, 2022, 2023, 2024, 2025];
+  const countries = ['India', 'Australia', 'USA', 'Russia', 'Pakistan'];
+
+  const handleYearClick = (year) => {
+    setSelectedYear(year);
+    setIsFilterApplied(false);
+  };
+
+  const handleCountryClick = (country) => {
+    setSelectedCountry(country);
+    setIsFilterApplied(false);
+  };
+
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearch = () => {
+    setIsFilterApplied(true);
+    const params = {
+      year: selectedYear,
+      country: selectedCountry,
+      query: searchQuery,
+    };
+    dispatch(getMovies(params))
+  };
+
+
+
+
 
 
 
   return (
-    <div>
-     <Box>
+    <div className='MainSearchDiv'>
+      <Box className='searchbar'>
+        <Box w="75%" m="auto">
+          <InputGroup>
+            <InputLeftElement size='lg'>
+              <AiOutlineSearch className='searchIcone' color='gray.300' />
+            </InputLeftElement>
+
+            <Input value={searchQuery} onChange={handleSearchInputChange} focusBorderColor='none' placeholder='Search Movies' size='lg' border="1px solid white" bgColor="white" boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" />
+
+
+            <InputRightElement size='lg'>
+              <BiSolidMicrophone className='searchIcone' color='gray.300' />
+            </InputRightElement>
+          </InputGroup>
+        </Box>
+
+        <Box className='cancelBTn'>
+          <button >
+            CANCEL
+          </button>
+        </Box>
+
+      </Box>
+
+      <Box className='SearchItems1'>
+      { 
       
-     </Box>
-      <Slider {...settings4}>
-        {slides.map((ele,index) => (
-          <Box
-            key={index} 
-          >
-            <Box className='mainDiv'>
+      setIsFilterApplied && movie.length>0 ? 
+         <Box className='FetchData' width="100%" height={"200px"}>
+          
+         <Box display={"flex"}  width="100%" mt="30px" height={"100%"} border="1px solid orange" justifyContent={"space-between"}>
+             <Box className='ImageDivv' width="33%" height={"200px"} border="1px solid red">
+                 <Image src="https://m.media-amazon.com/images/M/MV5BZDhhOTgzZDAtNDQwZi00MWRhLWJmY2QtMTA5ODAxMmM3MmIzXkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_.jpg" w="100%" h="100%"/>
+             </Box>
+             <Box className='textDivv' width="64%" height={"200px"} border="1px solid red">
+                 <Box border="1px solid red" h="60%" mt="30px">
+                    <Text fontSize={"21px "} color="white">Infinity Pool</Text>
+                     <Box display={"flex"} w="45%" mt="5px" justifyContent={"space-between"}>
+                         <Text fontSize={"16px "} color="white">2023</Text>
+                         <Text fontSize={"16px "} color="white">1h 57m R</Text>
+                     </Box>
+                     <Box className='star1' >
+                                 <AiFillStar className='starIcone1' />
+                                 <Text className="starText1">gagga</Text>
+                     </Box>
+                 </Box>
+             </Box>
 
-              <iframe
-                className='video'
-                src={ele.videoUrl}
-                title='YouTube video'
-                frameBorder='0'
-                allowFullScreen
-              ></iframe>
+         </Box>
+
+      </Box>
+      :      <Box className='SearchItems'>
+      <Tabs isFitted position="relative" variant="unstyled" >
+        <TabList h="70px" mb='1em' boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px">
+          <Tab color={"white"}>RECENT</Tab>
+          <Tab color={"white"}>ADVANCED SEARCH</Tab>
+        </TabList>
+        <TabIndicator
+          mt="-15.5px"
+          height="4px"
+          bg="yellow.500"
+          borderRadius="1px"
+        />
+        <TabPanels>
+          <TabPanel>
+            <Recent />
+          </TabPanel>
+          <TabPanel>
+            <div className='mainadvanceDiv'>
+
+              <Box className='filterSection'>
+
+
+                <Box className='filterCountryBox'>
+                  <Box>
+                    <Text color="white" fontSize='25px' fontFamily={"sans-serif"} fontWeight={"thin"}>Decade</Text>
+                  </Box>
+                  <Box className='filterCountry' mt="10px">
+                    {years.map((year) => (
+                      <button
+
+                        key={year}
+                        size='md'
+                        onClick={() => handleYearClick(year)}
+                        style={{ backgroundColor: selectedYear === year ? 'yellow' : '#4b5054', width: "70px", height: "35px", borderRadius: "5px", color: "white", fontSize: "16px" }}
+                      >
+                        {year}
+                      </button>
+                    ))}
+
+                  </Box>
+
+                </Box>
+
+                <Box className='filterCountryBox' mt="30px">
+                  <Box>
+                    <Text color="white" fontSize='25px' fontFamily={"sans-serif"} fontWeight={"thin"}>Region</Text>
+                  </Box>
+                  <Box className='filterCountry' mt="10px">
+                    {countries.map((country) => (
+                      <button
+
+                        size='md'
+                        key={country}
+                        onClick={() => handleCountryClick(country)}
+                        style={{ backgroundColor: selectedCountry === country ? 'yellow' : '#4b5054', width: "70px", height: "35px", borderRadius: "5px", color: "white", fontSize: "16px" }}
+                      >
+                        {country}
+                      </button>
+                    ))}
+
+                  </Box>
+
+                </Box>
+
+              </Box>
+
+              <Box className='searchButton'>
+                <Box w="20%" h="100%" border={"1px solid red"} className='cancelBTnSearch'>
+                  <button >
+                    CANCEL
+                  </button>
+                </Box>
+                <Box w="70%" h="100%" border={"1px solid red"} display={"flex"} justifyContent={"center"} alignContent={"center"} >
+                  <button
+                    style={{ backgroundColor: isFilterApplied ? 'blue' : 'yellow', width: "80%", height: "85%", borderRadius: "5px", color: "black", fontSize: "18px", fontWeight: "500", border: "1px solid yellow", margin: 'auto', }}
+                    onClick={handleSearch}
+                  >
+                    SEE RESULTS
+                  </button>
+                </Box>
+
+              </Box>
+
+
+
+            </div>
+
+
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
+       
+       
+
+    </Box>
+
+      }
+
+</Box>
+
+      {/* <Box className='SearchItems'>
+        <Tabs isFitted position="relative" variant="unstyled" >
+          <TabList h="70px" mb='1em' boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px">
+            <Tab color={"white"}>RECENT</Tab>
+            <Tab color={"white"}>ADVANCED SEARCH</Tab>
+          </TabList>
+          <TabIndicator
+            mt="-15.5px"
+            height="4px"
+            bg="yellow.500"
+            borderRadius="1px"
+          />
+          <TabPanels>
+            <TabPanel>
+              <Recent />
+            </TabPanel>
+            <TabPanel>
+              <div className='mainadvanceDiv'>
+
+                <Box className='filterSection'>
+
+
+                  <Box className='filterCountryBox'>
+                    <Box>
+                      <Text color="white" fontSize='25px' fontFamily={"sans-serif"} fontWeight={"thin"}>Decade</Text>
+                    </Box>
+                    <Box className='filterCountry' mt="10px">
+                      {years.map((year) => (
+                        <button
+
+                          key={year}
+                          size='md'
+                          onClick={() => handleYearClick(year)}
+                          style={{ backgroundColor: selectedYear === year ? 'yellow' : '#4b5054', width: "70px", height: "35px", borderRadius: "5px", color: "white", fontSize: "16px" }}
+                        >
+                          {year}
+                        </button>
+                      ))}
+
+                    </Box>
+
+                  </Box>
+
+                  <Box className='filterCountryBox' mt="30px">
+                    <Box>
+                      <Text color="white" fontSize='25px' fontFamily={"sans-serif"} fontWeight={"thin"}>Region</Text>
+                    </Box>
+                    <Box className='filterCountry' mt="10px">
+                      {countries.map((country) => (
+                        <button
+
+                          size='md'
+                          key={country}
+                          onClick={() => handleCountryClick(country)}
+                          style={{ backgroundColor: selectedCountry === country ? 'yellow' : '#4b5054', width: "70px", height: "35px", borderRadius: "5px", color: "white", fontSize: "16px" }}
+                        >
+                          {country}
+                        </button>
+                      ))}
+
+                    </Box>
+
+                  </Box>
+
+                </Box>
+
+                <Box className='searchButton'>
+                  <Box w="20%" h="100%" border={"1px solid red"} className='cancelBTnSearch'>
+                    <button >
+                      CANCEL
+                    </button>
+                  </Box>
+                  <Box w="70%" h="100%" border={"1px solid red"} display={"flex"} justifyContent={"center"} alignContent={"center"} >
+                    <button
+                      style={{ backgroundColor: isFilterApplied ? 'blue' : 'yellow', width: "80%", height: "85%", borderRadius: "5px", color: "black", fontSize: "18px", fontWeight: "500", border: "1px solid yellow", margin: 'auto', }}
+                      onClick={handleSearch}
+                    >
+                      SEE RESULTS
+                    </button>
+                  </Box>
+
+                </Box>
+
+
+
+              </div>
+
+
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+         
+         <Box className='FetchData' width="100%" height={"200px"}>
+            <Box display={"flex"}  width="100%" mt="30px" height={"100%"} border="1px solid orange" justifyContent={"space-between"}>
+                <Box className='ImageDivv' width="33%" height={"200px"} border="1px solid red">
+                    <Image src="https://m.media-amazon.com/images/M/MV5BZDhhOTgzZDAtNDQwZi00MWRhLWJmY2QtMTA5ODAxMmM3MmIzXkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_.jpg" w="100%" h="100%"/>
+                </Box>
+                <Box className='textDivv' width="64%" height={"200px"} border="1px solid red">
+                    <Box border="1px solid red" h="60%" mt="30px">
+                       <Text fontSize={"21px "} color="white">Infinity Pool</Text>
+                        <Box display={"flex"} w="45%" mt="5px" justifyContent={"space-between"}>
+                            <Text fontSize={"16px "} color="white">2023</Text>
+                            <Text fontSize={"16px "} color="white">1h 57m R</Text>
+                        </Box>
+                        <Box className='star1' >
+                                    <AiFillStar className='starIcone1' />
+                                    <Text className="starText1">gagga</Text>
+                        </Box>
+                    </Box>
+                </Box>
+
             </Box>
 
-            <Box className='NameDIV'>
-              <Box className='smallDiv'>
-                <Image className='mainVid' src={ele.image} />
-              </Box>
-              <Box className='Title'>
-                <Text fontFamily={"sans-serif"}>{ele.name}</Text>
-                <Text fontFamily={"sans-serif"} color="gray">Watch the trailer</Text>
-              </Box>
+         </Box>
 
-            </Box>
+      </Box> */}
 
 
-          </Box>
-        ))}
-      </Slider>
+
+
 
 
 
