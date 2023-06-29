@@ -63,7 +63,7 @@ const Search = () => {
     setIsFilterApplied(false);
     console.log("hello")
     console.log(isFilterApplied)
-    dispatch(getMovies({}))
+     //dispatch(getMovies({}))
   }
 
 
@@ -132,7 +132,7 @@ const Search = () => {
                             ))
               
                             } </>:
-                            <Box w="80%" h="250px"  m="auto" mt="100px">
+                            <Box w="80%" h="250px"  m="auto" mt="50px">
                                <Image src="https://i.gifer.com/VIcP.gif"  w="100%" h="100%"   />
 
                             </Box>
