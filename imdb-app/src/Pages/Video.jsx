@@ -57,7 +57,7 @@ const Video = () => {
 
                         </Box>
                     ))} */}
-            <Box className="oneSlide">
+            {/* <Box className="oneSlide">
              <Slider {...settings4}>
                 {fristSlide.map((ele, index) => (
                     <Box
@@ -89,7 +89,7 @@ const Video = () => {
                     </Box>
                 ))}
             </Slider>
-            </Box>
+            </Box> */}
 
             {/* <Box className='mainDiv'>
 
