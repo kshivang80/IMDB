@@ -2,15 +2,19 @@
 .MainSearchDiv{
     height:1500px;
     width:100%;
-    border:1px solid red
+    /* border:1px solid red */
 }
 .searchbar{
-    height:80px;
+    height:85px;
     width:100%;
-    border:1px solid white;
+    /* border:1px solid white; */
     display: flex;
     align-items: center;
-    justify-content:space-between
+    justify-content:space-between;
+    /* background-color:#252628; */
+    background-color: #25282a;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    /* border-radius: 5px; */
 }
 .searchIcone{
     margin-top: 5px;
@@ -23,7 +27,7 @@
 }
 .cancelBTn{
     width:20%;
-    border:1px solid white;
+    /* border:1px solid white; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -34,14 +38,14 @@
 }
 .SearchItems{
     width:100%;
-    border:1px solid white;
+    /* border:1px solid white; */
     height: 100%;
-    margin-top: 30px;
+    margin-top: 25px;
     background-color: #18191A;
 }
 .SearchItems1{
     width:100%;
-    border:1px solid white;
+    /* border:1px solid white; */
     height: 100%;
     margin-top: 30px;
     background-color: #18191A;
@@ -53,17 +57,17 @@
 .mainadvanceDiv{
     height: auto;
     width:100%;
-    border: 1px solid #4b5054;
+    /* border: 1px solid #4b5054; */
 }
 .filterCountryBox{
     height: 100px;
     width:100%;
-    border: 1px solid rgb(230, 218, 220);
+    /* border: 1px solid rgb(230, 218, 220); */
 }
 .filterCountry{
     height: 50px;
     width:100%;
-    border: 1px solid rgb(230, 218, 220);
+    /* border: 1px solid rgb(230, 218, 220); */
     display: flex;
     justify-content: space-between;
 }
@@ -81,7 +85,7 @@
 }
 .cancelBTnSearch{
     width:20%;
-    border:1px solid white;
+    /* border:1px solid white; */
     height: 100%;
     display: flex;
     align-items: center;
@@ -95,7 +99,7 @@
 .star1 {
     display: flex;
     width: 100%;
-    border: 1px solid green;
+    
     
     margin-top: 5px;
 }

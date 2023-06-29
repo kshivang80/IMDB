@@ -1,7 +1,7 @@
 import * as types from "./actionTypes"
 
 const initialState={
-    movies:[],
+    movie:[],
     isLoading:false,
     isError:false,
 }
@@ -17,7 +17,7 @@ const Reducer=(oldState=initialState,action)=>{
              return{...oldState,isLoading:true}
 
         case types.GET_MOVIES_SUCCESS:
-            return{...oldState,isLoading:false,movies:payload}
+            return{...oldState,isLoading:false,movie:payload}
 
         case types.GET_MOVIES_ERROR:
             return {...oldState,isLoading:false,isError:true}
